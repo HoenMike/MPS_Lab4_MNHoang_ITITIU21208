@@ -23,11 +23,11 @@ typedef struct
 
 #define SCH_MAX_TASKS 50
 
-void SCH_Init(void);
-void SCH_Add_Task(void (*pFunction)(),
-                  uint32_t DELAY,
-                  uint32_t PERIOD);
-void SCH_Update(void);
-void SCH_DispatchTasks(void);
+void SCH_Init(void);                   // initialize the scheduler (TODO: implement this function if needed in the future)
+void SCH_Add_Task(void (*pFunction)(), // pointer to the task
+                  uint32_t DELAY,      // delay before first execution
+                  uint32_t PERIOD);    // period of the task
+void SCH_Update(void);                 // update the tasks (call this function in the timer interrupt)
+void SCH_DispatchTasks(void);          // execute the tasks (call this function in the main loop)
 
 #endif /* INC_SCHEDULER_H_ */
