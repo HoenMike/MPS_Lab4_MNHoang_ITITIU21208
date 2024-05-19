@@ -14,7 +14,7 @@ void SCH_Init(void)
   current_index_task = 0;
 }
 
-void SCH_Add_Task(void (*pFunction)(), const uint32_t DELAY, const uint32_t PERIOD)
+void SCH_Add_Task(void (*pFunction)(), uint32_t DELAY, uint32_t PERIOD)
 {
   if (current_index_task < SCH_MAX_TASKS)
   {
@@ -43,7 +43,7 @@ void SCH_Update(void)
   }
 }
 
-void SCH_Dispatch_Tasks(void)
+void SCH_DispatchTasks(void)
 {
   for (int i = 0; i < current_index_task; i++)
   {

@@ -24,7 +24,9 @@ typedef struct
 #define SCH_MAX_TASKS 50
 
 void SCH_Init(void);
-void SCH_AddTask(void (*pFunction)(), const uint32_t DELAY, const uint32_t PERIOD);
+void SCH_Add_Task(void (*pFunction)(),
+                  uint32_t DELAY,
+                  uint32_t PERIOD);
 void SCH_Update(void);
 void SCH_DispatchTasks(void);
 
